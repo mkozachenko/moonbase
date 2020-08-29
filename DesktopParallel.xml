@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Desktop" parallel="tests" verbose="4" configfailurepolicy="continue">
+
+  <parameter name="platform" value="${platform}"/>
+  <parameter name="browser" value="${browser}"/>
+  <parameter name="sitePage" value="${site}"/>
+  <parameter name="siteLanguage" value="${lang}"/>
+  <parameter name="headlessMode" value="${headlessMode}"/>
+  <parameter name="waitExplicit" value="${waitExplicit}"/>
+  <parameter name="waitImplicit" value="${waitImplicit}"/>
+
+    <test name="Parallel 1" parallel="classes" thread-count="12">
+        <classes>
+          <class name="TestSuites.TestClass1">
+            <methods>
+              <exclude name="testMethod1"/>
+              <exclude name="testMethod2"/>
+            </methods>
+          </class>
+          <class name="TestSuites.TestClass2"/>
+        </classes>
+    </test>
+    <test name="Parallel 2" parallel="classes">
+      <classes>
+        <class name="TestSuites.TestClass1">
+          <methods>
+            <include name="testMethod1"/>
+            <include name="testMethod2"/>
+          </methods>
+        </class>
+        <class name="TestSuites.TestClass3"/>
+      </classes>
+    </test>
+</suite>
+
+
+
+

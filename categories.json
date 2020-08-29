@@ -1,0 +1,41 @@
+[{
+    "name": "Outdated",
+    "matchedStatuses": ["broken"],
+    "traceRegex": ".*FileNotFoundException.*"
+},
+    {
+        "name": "Assertion fails",
+        "matchedStatuses": ["failed"],
+        "traceRegex": ".*AssertionError.*"
+    },
+    {
+        "name": "NULL",
+        "matchedStatuses": ["broken"],
+        "traceRegex": ".*NullPointerException.*"
+    },
+    {
+        "name": "WAIT",
+        "matchedStatuses": ["broken"],
+        "traceRegex": ".*TimeoutException.*"
+    },
+    {
+        "name": "Page error",
+        "matchedStatuses": ["broken"],
+        "traceRegex": ".*ElementClickInterceptedException.*"
+    },
+    {
+        "name": "Driver Fail",
+        "matchedStatuses": ["broken", "skipped"],
+        "traceRegex": ".*UnreachableBrowserException.*|.*WebDriverException.*"
+    },
+    {
+        "name": "Status Error 40*",
+        "matchedStatuses": ["broken", "failed","skipped"],
+        "messageRegex": ".*\\|::\\|.40.>>.*"
+    },
+    {
+        "name": "Status Error 50*",
+        "matchedStatuses": ["broken", "failed","skipped"],
+        "messageRegex": ".*\\|::\\|.50.>>.*"
+    }
+]
